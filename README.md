@@ -1,4 +1,4 @@
-![](helium-title.svg)
+![](http://googol.warriordudimanche.net/app/img/favicon.svg)
 # Googol
 
 Ce script PHP sert d'intermédiaire entre l'utilisateur et google:
