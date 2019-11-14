@@ -1,0 +1,23 @@
+<div class="query_form">
+	{{this->render('common_search')}}		
+	<span class="options">
+		<span class="hidearrow">
+			<select id="color_selection" name="couleur" title="{{"Select a color"}}">
+				{{app->renderColorsOptions()}}
+			</select>
+		</span>
+		<span class="hidearrow">		
+			<select id="size_selection" name="taille" title="{{"Select a size"}}">
+				{{app->renderSizesOptions()}}			
+			</select>
+		</span>
+	</span>
+	<button><img src="{{APP_IMG}}loupewhite.svg"/></button>
+</div>
+<nav>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=web&lang={{LANGUAGE}}">Web</a></li>
+	<li class="active">{{"Images"}}</li>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=videos&lang={{LANGUAGE}}">{{"Videos"}}</a></li>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=news&lang={{LANGUAGE}}">{{"News"}}</a></li>
+	{{this->renderForEach('li_alternate_motors',$alternatives)}}
+</nav>

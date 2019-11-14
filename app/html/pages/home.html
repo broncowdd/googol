@@ -1,0 +1,13 @@
+				{{this->render(SEARCH_FORM)}}
+			<input type="hidden" name="lang" value="{{LANGUAGE}}"/>
+		</form>
+	</header>
+	<div class="msg nomobile {{NO_QUERY_CLASS}}">{{"Search anonymously on Google (direct links, fake referer, no ads, private IP)"}}</div>
+	<aside id="list">
+		<ul start="{{START}}">
+			{{app->renderQuery()}}
+		</ul>
+
+		{{app->renderPagination()}}
+
+	</aside>

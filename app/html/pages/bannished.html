@@ -1,0 +1,10 @@
+
+	<p>{{"We are bannished from Google for"}} {{app->bannishmentDuration()}} {{"minutes"}}</p>
+	<p>{{"You will be redirected to DDG"}}</p>
+{{$query=app->get("request")}}
+	<a href="https://duckduckgo.com/?q={{$query}}">{{"If not, click here"}}</a>
+	<script type="text/javascript">
+		setTimeout(function(){  window.location = "https://duckduckgo.com/?q={{$query}}" }, 5000);
+	</script>
+
+

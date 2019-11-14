@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="fr">
+<head>
+	<title>{{TITLE}}</title>
+	<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" href="assets/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="{{APP_CSS}}style.css"  media="screen" />
+	<link rel="search" type="application/opensearchdescription+xml" title="{{"Googol - google without lies"}}" href="googol.xml">
+	<style>
+		@font-face {
+			{{app->logoFontFamily()}}
+		    font-family: '{{LOGO_FONT_FAMILY}}';
+		    font-style: normal;
+		    font-weight: 400;
+		    src: local('{{LOGO_FONT_FAMILY}}'), url('{{APP_FONTS}}fontslogo/{{LOGO_FONT}}') format('woff');
+		}
+		header em, .footerlogo em{
+			font-family: '{{LOGO_FONT_FAMILY}}'!important;
+			font-weight: initial;
+
+	}
+	</style>
+	<!--[if IE]><script> document.createElement("article");document.createElement("aside");document.createElement("section");document.createElement("footer");</script> <![endif]-->
+</head>
+{{app->getQueryData()}}
+<body class="{{MODE}} {{app->isThereResults()}}">	
+	<div id="main" class="main">
+		<header>
+			{{this->render("lang_button")}}
+			{{this->render("logo")}}
+			<form action="" method="get" >			
+				<div class="box">
+					
+						

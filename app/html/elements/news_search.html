@@ -1,0 +1,11 @@
+<div class="query_form">
+	{{this->render('common_search')}}	
+	<button><img src="{{APP_IMG}}loupewhite.svg"/></button>
+</div>
+<nav>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=web&lang={{LANGUAGE}}">Web</a></li>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=images&lang={{LANGUAGE}}">{{"Images"}}</a></li>
+	<li><a href="?q={{QUERY_ENCODED}}&mod=videos&lang={{LANGUAGE}}">{{"Videos"}}</a></li>
+	<li class="active">{{"News"}}</li>
+	{{this->renderForEach('li_alternate_motors',$alternatives)}}
+</nav>

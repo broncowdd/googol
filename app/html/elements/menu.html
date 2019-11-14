@@ -1,0 +1,9 @@
+<nav class="{{CURRENT_PAGE}}">
+	<li><a href="?p=home">{{lang->r('Home')}}</a></li>
+	<li><a href="?p=documentation">{{lang->r('Documentation')}}</a></li>
+	<li><a href="?p=download">{{lang->r('Download')}}</a></li>
+	<li>{{tpl->ifLoggedRender('adminbutton')}}</li>
+	<li>{{tpl->ifLoggedRender('usersbutton')}}</li>
+	<li>{{secure->loginLogoutButton()}}</li>
+
+</nav>
