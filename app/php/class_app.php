@@ -18,11 +18,11 @@ class app{
 
 	public function __construct(){
 		# Bannished from google ?
-		if (is_file('temp/Bannished')){
-			if(filemtime('temp/Bannished')+BANNISHMENT_DURATION>time()){
+		if (is_file(DATA.'Bannished')){
+			if(filemtime(DATA.'Bannished')+BANNISHMENT_DURATION>time()){
 				define('BANNISHED',true);
 			}else{
-				@unlink('temp/Bannished');
+				@unlink(DATA.'Bannished');
 			}
 		}
 		tools::defineIfUndefined('BANNISHED',false);
@@ -60,7 +60,7 @@ class app{
 	# how many minutes of bannishment
 	public function bannishmentDuration(){
 		if (BANNISHED){
-			$filet=filemtime('temp/Bannished')+BANNISHMENT_DURATION;
+			$filet=filemtime(DATA.'Bannished')+BANNISHMENT_DURATION;
 			return round(($filet-time())/60);
 		}
 
@@ -251,7 +251,7 @@ class app{
 		
 		if (empty($this->data)){
 			# no results -> bannished from google (bastards ! (ಠ_ಠ)  )
-			file_put_contents('temp/Bannished','');
+			file_put_contents(DATA.'Bannished','');
 			# go to bannished page ... 
 			$this->redirectIfBannished(true);
 		}
